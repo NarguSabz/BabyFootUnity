@@ -1,11 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 /**
  * Cette classe gère les Zone d arrivees. Elle déclenche un événement
- * quand la balle entre sur la zone
- * 
+ * quand la balle entre sur la zone bleu ou rouge
+ * Date: 25 fevrier 2022
  * Auteur: Sabbag Ziarani, Narges
  */
 
@@ -34,23 +31,27 @@ public class ZoneArrive : MonoBehaviour
         if (other.gameObject == Balle)
         {
 
-
+            //si la l objet liee a ce script est le but bleu, on entre dans cette indentation
             if (gameObject.name == "butBleu")
             {
 
                 // on s assure qu il y a des observateurs a cette evenement sinon ca ne sert a rien a declenche cette evenement
                 if (ArriverALaZoneBleu != null)
                 {
-
+                    //on appel l evenement
                     ArriverALaZoneBleu();
                 }
 
             }
+            //si la l objet liee a ce script est le but rouge, on entre dans cette indentation
+
             else if (gameObject.name == "butRouge")
             {
                 // on s assure qu il y a des observateurs a cette evenement sinon ca ne sert a rien a declenche cette evenement
                 if (ArriverALaZoneRouge != null)
                 {
+                    //on appel l evenement
+
                     ArriverALaZoneRouge();
                 }
             }

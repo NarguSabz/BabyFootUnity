@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 /**
 * Cette classe est un observateur de la classe zonneArivee qui ecoute les deux zones d arrivee et comptabilise les points.
-* 
+* Date: 25 fevrier 2022
 * Auteur: Sabbagh Ziarani, Narges
 */
 public class CompteurDePoints : MonoBehaviour
@@ -31,10 +29,10 @@ public class CompteurDePoints : MonoBehaviour
         _nbreDePointsTextBleu = GameObject.Find("Canvas/pointsEquipeBleu").GetComponent<Text>();
         _nbreDePointsTextRouge = GameObject.Find("Canvas/pointsEquipeRouge").GetComponent<Text>();
 
-        //on inscris le compteur des points bleu a l evenement de arriveralazone de la classe ZoneArrive, une fois l evenement surviennent la methode CompterPointsRouge sera appele
-        zoneBleu.ArriverALaZoneBleu += CompterPointsBleu;
-        //on inscris le compteur des points rouge a l evenement de arriveralazone de la classe ZoneArrive, une fois l evenement surviennent la methode CompterPointsBleu sera appele
-        zoneRouge.ArriverALaZoneRouge += CompterPointsRouge;
+        //on inscris le compteur des points rouge a l evenement de arriveralazone de la classe ZoneArrive, une fois l evenement surviennent la methode CompterPointsRouge sera appele
+        zoneBleu.ArriverALaZoneBleu += CompterPointsRouge;
+        //on inscris le compteur des points bleu a l evenement de arriveralazone de la classe ZoneArrive, une fois l evenement surviennent la methode CompterPointsBleu sera appele
+        zoneRouge.ArriverALaZoneRouge += CompterPointsBleu;
     }
     //cette methode permet de compter les points de l equipe bleu et mettre a jour le champs de text des points
     private void CompterPointsBleu()
